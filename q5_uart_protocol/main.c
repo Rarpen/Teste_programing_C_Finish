@@ -48,7 +48,6 @@ int main(void)
     printf("Enviando frame 3 (endereçado a 0x20, não é para nós)\n");
     feed_stream(&parser, frame, n3);
 
-    /* 4) Corrompe um byte para disparar a verificação de CRC. */
     size_t n4 = uart_build_frame(MY_ADDR, 0x04, 0x55, pl1,
                                  (uint8_t)sizeof(pl1), frame, sizeof(frame));
     frame[6] ^= 0xFF;   /* inverte um byte do payload */
