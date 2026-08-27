@@ -25,7 +25,7 @@ static button_level_t read_button_debounced() {
 void setup() {
   Serial.begin(115200);
   pinMode(BUTTON_PIN, INPUT_PULLUP);
-  button_fsm_init(&fsm, 10000);      // PROTECTED = 10 s
+  button_fsm_init(&fsm, 10000);    
 }
 
 void loop() {
